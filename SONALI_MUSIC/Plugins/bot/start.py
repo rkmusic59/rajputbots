@@ -8,7 +8,7 @@ from youtubesearchpython.__future__ import VideosSearch
 import config
 from SONALI_MUSIC import app
 from SONALI_MUSIC.misc import _boot_
-from SONALI_MUSIC.plugins.sudo.sudoers import sudoers_list
+from SONALI_MUSIC.Plugins.sudo.sudoers import sudoers_list
 from SONALI_MUSIC.utils.database import get_served_chats, get_served_users, get_sudoers
 from SONALI_MUSIC.utils import bot_sys_stats
 from SONALI_MUSIC.utils.database import (
