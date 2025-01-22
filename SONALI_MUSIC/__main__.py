@@ -8,7 +8,7 @@ import config
 from SONALI_MUSIC import LOGGER, app, userbot
 from SONALI_MUSIC.core.call import Sona
 from SONALI_MUSIC.misc import sudo
-from SONALI_MUSIC.plugins import ALL_MODULES
+from SONALI_MUSIC.Plugins import ALL_MODULES
 from SONALI_MUSIC.utils.database import get_banned_users, get_gbanned
 from config import BANNED_USERS
 
