@@ -12,7 +12,7 @@ import config
 from SONALI_MUSIC import app
 from SONALI_MUSIC.core.userbot import assistants
 from SONALI_MUSIC.misc import SUDOERS, mongodb
-from SONALI_MUSIC.plugins import ALL_MODULES
+from SONALI_MUSIC.Plugins import ALL_MODULES
 from SONALI_MUSIC.utils.database import get_served_chats, get_served_users, get_sudoers
 from SONALI_MUSIC.utils.decorators.language import language, languageCB
 from SONALI_MUSIC.utils.inline.stats import back_stats_buttons, stats_buttons
