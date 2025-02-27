@@ -26,7 +26,7 @@ async def fetch_med_info(client, message):
         reply = f"**ᴀɴ ᴇʀʀᴏʀ ᴏᴄᴄᴜʀʀᴇᴅ :** {e}"
 
     # Add attribution and reply to the user
-    reply += "\n\n**❍ ᴀɴsᴡᴇʀ ʙʏ :- @Sonali_Music_Bot**"
+    reply += "\n\n**❍ ᴀɴsᴡᴇʀ ʙʏ :- @radha_music_Bot**"
     await message.reply_text(reply)
 
 @app.on_message(filters.mentioned & filters.group)
@@ -52,5 +52,5 @@ async def fetch_med_info_group(client, message):
         reply = f"**ᴀɴ ᴇʀʀᴏʀ ᴏᴄᴄᴜʀʀᴇᴅ :** {e}"
 
     # Add attribution and reply to the user
-    reply += "\n\n**❍ ᴀɴsᴡᴇʀ ʙʏ :- @Sonali_Music_Bot**"
+    reply += "\n\n**❍ ᴀɴsᴡᴇʀ ʙʏ :- @radha_music_Bot**"
     await message.reply_text(reply)
