@@ -32,33 +32,34 @@ async def make_carbon(code):
     output_image.name = "carbon.png"
     return output_image
 
+
 @app.on_message(filters.command("ping", prefixes=["/"]) & ~BANNED_USERS)
 @language
 async def ping_com(client, message: Message, _):
-    PING_IMG_URL = "https://files.catbox.moe/qu3psi.jpg"
+    PING_IMG_URL = "https://files.catbox.moe/pcncfx.jpg"
     captionss = "**ᴘɪɴɢɪɴɢ ᴏᴜʀ sᴇʀᴠᴇʀ ᴡᴀɪᴛ.**"
     response = await message.reply_photo(PING_IMG_URL, caption=(captionss))
     await asyncio.sleep(1)
-    await response.edit_caption("**ᴘɪηɢɪηɢ ᴏᴜʀ sєʀᴠєʀ ᴡᴧɪᴛ.**")
+    await response.edit_caption("**ᴘɪɴɢɪɴɢ ᴏᴜʀ sᴇʀᴠᴇʀ ᴡᴀɪᴛ...**")
     await asyncio.sleep(1)
-    await response.edit_caption("**ᴘɪηɢɪηɢ ᴏᴜʀ sєʀᴠєʀ ᴡᴧɪᴛ..**")
+    await response.edit_caption("**ᴘɪɴɢɪɴɢ ᴏᴜʀ sᴇʀᴠᴇʀ ᴡᴀɪᴛ.**")
     await asyncio.sleep(1)
-    await response.edit_caption("**ᴘɪηɢɪηɢ ᴏᴜʀ sєʀᴠєʀ ᴡᴧɪᴛ...**")
+    await response.edit_caption("**ᴘɪɴɢɪɴɢ ᴏᴜʀ sᴇʀᴠᴇʀ ᴡᴀɪᴛ..**")
     await asyncio.sleep(1.5)
-    await response.edit_caption("**ᴘɪηɢɪηɢ ᴏᴜʀ sєʀᴠєʀ ᴡᴧɪᴛ....**")
+    await response.edit_caption("**ᴘɪɴɢɪɴɢ ᴏᴜʀ sᴇʀᴠᴇʀ ᴡᴀɪᴛ...**")
     await asyncio.sleep(2)
-    await response.edit_caption("**ᴘɪηɢɪηɢ ᴏᴜʀ sєʀᴠєʀ ᴡᴧɪᴛ.....**")
+    await response.edit_caption("**ᴘɪɴɢɪɴɢ ᴏᴜʀ sᴇʀᴠᴇʀ ᴡᴀɪᴛ....**")
     await asyncio.sleep(2)
-    await response.edit_caption("**sʏsᴛєϻ ᴅᴧᴛᴧ ᴧηᴧʟʏsєᴅ sᴜᴄᴄєssғᴜʟʟʏ !**")
+    await response.edit_caption("**sʏsᴛᴇᴍ ᴅᴀᴛᴀ ᴀɴᴀʟʏsᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ !**")
     await asyncio.sleep(3)
-    await response.edit_caption("**sєηᴅɪηɢ sʏsᴛєϻ ᴧηᴧʟʏsєᴅ ᴅᴧᴛᴧ ᴘʟєᴧsє ᴡᴧɪᴛ...**")
+    await response.edit_caption("**sᴇɴᴅɪɴɢ sʏsᴛᴇᴍ ᴀɴᴀʟʏsᴇᴅ ᴅᴀᴛᴀ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...**")
     start = datetime.now()
-    pytgping = await Sona.ping()
+    pytgping = await SACHIN.ping()
     UP, CPU, RAM, DISK = await bot_sys_stats()
     resp = (datetime.now() - start).microseconds / 1000
     text =  _["ping_2"].format(resp, app.name, UP, RAM, CPU, DISK, pytgping)
     carbon = await make_carbon(text)
-    captions = "**ㅤ  ❍ ᴘɪηɢ...ᴘσηɢ...ᴘɪηɢ\nㅤ  ❍ ᴅɪηɢ...ᴅσηɢ...ᴅɪηɢ**"
+    captions = "**ㅤ  ➲ ᴘɪɴɢ...ᴘᴏɴɢ...ᴘɪɴɢ\nㅤ  ➲ ᴅɪɴɢ...ᴅᴏɴɢ...ᴅɪɴɢ**"
     await message.reply_photo((carbon), caption=captions,
     reply_markup=InlineKeyboardMarkup(
             [
@@ -71,10 +72,10 @@ async def ping_com(client, message: Message, _):
         ],
         [
             InlineKeyboardButton(
-                text="• ɢʀᴏᴜᴘ •", url=f"https://t.me/+gMy8Cp190ediNzZl",
+                text="• ɢʀᴏᴜᴘ •", url=f"https://t.me/oldskoolgc",
             ),
             InlineKeyboardButton(
-                text="• ᴍᴏʀᴇ •", url=f"https://t.me/PURVI_SUPPORT",
+                text="• ᴍᴏʀᴇ •", url=f"https://t.me/iamvillain77",
             )
         ],
         [
