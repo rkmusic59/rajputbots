@@ -5,7 +5,7 @@ import html  # HTML entities को डिकोड करने के लि�
 
 from pyrogram import filters
 from pyrogram.enums import PollType, ChatAction
-from SONALI_MUAIC import app
+from SONALI_MUSIC import app
 
 last_command_time = {}
 
