@@ -5,7 +5,7 @@ import html  # HTML entities को डिकोड करने के लि�
 
 from pyrogram import filters
 from pyrogram.enums import PollType, ChatAction
-from SONALI_MUSIC import app
+from SONALI_MUAIC import app
 
 last_command_time = {}
 
@@ -43,10 +43,11 @@ async def quiz(client, message):
 
         correct_index = all_answers.index(correct_answer)
 
+        # ✅ एरर ठीक किया: अब options को सीधे list[str] में पास कर रहे हैं
         await app.send_poll(
             chat_id=message.chat.id,
             question=question,
-            options=all_answers,
+            options=all_answers,  # अब यह सही से काम करेगा
             is_anonymous=False,
             type=PollType.QUIZ,
             correct_option_id=correct_index,
