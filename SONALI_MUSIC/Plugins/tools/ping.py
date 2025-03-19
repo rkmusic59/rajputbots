@@ -5,7 +5,7 @@ from pyrogram.types import Message
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InputMediaPhoto
 from config import *
 from SONALI_MUSIC import app
-from SONALI_MUSIC.core.call import sona
+from SONALI_MUSIC.core.call import SONA
 from SONALI_MUSIC.utils import bot_sys_stats
 from SONALI_MUSIC.utils.decorators.language import language
 from SONALI_MUSIC.utils.inline import supp_markup
