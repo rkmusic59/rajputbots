@@ -1,20 +1,18 @@
 import requests
 from pyrogram import Client, filters
 from pyrogram.enums import ChatAction
-from SONALI_MUSIC import app  # Assuming this is the app instance from your project
+from SONALI_MUSIC import app  # बॉट का एप्लिकेशन इंपोर्ट करें
 
-@app.on_message(filters.command("ask"))
+@app.on_message(filters.command("ai"))
 async def fetch_med_info(client, message):
-    query = " ".join(message.command[1:])  # Extract the query after the command
+    query = " ".join(message.command[1:]) if len(message.command) > 1 else None
     if not query:
-        await message.reply_text("**ᴘʟᴇᴀsᴇ ᴘʀᴘᴠɪᴅᴇ ᴀ ǫᴜᴇʀʏ ᴛᴏ ᴀsᴋ**.")
+        await message.reply_text("**ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ǫᴜᴇʀʏ ᴛᴏ ᴀsᴋ.**")
         return
 
-    # Send typing action to indicate bot is working
     await client.send_chat_action(chat_id=message.chat.id, action=ChatAction.TYPING)
 
-    # Use the API to get medical data
-    api_url = f"https://chatwithai.codesearch.workers.dev/?chat={query}"
+    api_url = f"https://chatwithai.codesearchdev.workers.dev/?chat={YourQuery}"
     try:
         response = requests.get(api_url)
         if response.status_code == 200:
@@ -25,22 +23,19 @@ async def fetch_med_info(client, message):
     except Exception as e:
         reply = f"**ᴀɴ ᴇʀʀᴏʀ ᴏᴄᴄᴜʀʀᴇᴅ :** {e}"
 
-    # Add attribution and reply to the user
-    reply += "\n\n**❍ ᴀɴsᴡᴇʀ ʙʏ :- @radha_music_Bot**"
+    reply += "\n\n**❍ ᴀɴsᴡᴇʀ ʙʏ :- @radha_music_bot**"
     await message.reply_text(reply)
 
 @app.on_message(filters.mentioned & filters.group)
 async def fetch_med_info_group(client, message):
-    query = " ".join(message.command[1:])  # Extract the query after the command
+    query = message.text.replace(f"@{client.me.username}", "").strip()
     if not query:
         await message.reply_text("**ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ᴍᴇᴅɪᴄᴀʟ ǫᴜᴇʀʏ ᴛᴏ ᴀsᴋ.**")
         return
 
-    # Send typing action to indicate bot is working
     await client.send_chat_action(chat_id=message.chat.id, action=ChatAction.TYPING)
 
-    # Use the API to get medical data
-    api_url = f"https://chatwithai.codesearch.workers.dev/?chat={query}"
+    api_url = f"https://chatwithai.codesearchdev.workers.dev/?chat={YourQuery}"
     try:
         response = requests.get(api_url)
         if response.status_code == 200:
@@ -51,6 +46,5 @@ async def fetch_med_info_group(client, message):
     except Exception as e:
         reply = f"**ᴀɴ ᴇʀʀᴏʀ ᴏᴄᴄᴜʀʀᴇᴅ :** {e}"
 
-    # Add attribution and reply to the user
-    reply += "\n\n**❍ ᴀɴsᴡᴇʀ ʙʏ :- @radha_music_Bot**"
+    reply += "\n\n**❍ ᴀɴsᴡᴇʀ ʙʏ :- @radha_music_bot**"
     await message.reply_text(reply)
