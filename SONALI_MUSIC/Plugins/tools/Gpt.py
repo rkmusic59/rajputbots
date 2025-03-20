@@ -5,14 +5,15 @@ from SONALI_MUSIC import app  # बॉट का एप्लिकेशन इ
 
 @app.on_message(filters.command("ai"))
 async def fetch_med_info(client, message):
-    query = " ".join(message.command[1:]) if len(message.command) > 1 else None
-    if not query:
+    YourQuery = " ".join(message.command[1:]) if len(message.command) > 1 else None  # YourQuery डिफाइन किया
+    if not YourQuery:
         await message.reply_text("**ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ǫᴜᴇʀʏ ᴛᴏ ᴀsᴋ.**")
         return
 
     await client.send_chat_action(chat_id=message.chat.id, action=ChatAction.TYPING)
 
     api_url = f"https://chatwithai.codesearchdev.workers.dev/?chat={YourQuery}"
+
     try:
         response = requests.get(api_url)
         if response.status_code == 200:
@@ -28,14 +29,15 @@ async def fetch_med_info(client, message):
 
 @app.on_message(filters.mentioned & filters.group)
 async def fetch_med_info_group(client, message):
-    query = message.text.replace(f"@{client.me.username}", "").strip()
-    if not query:
-        await message.reply_text("**ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ᴍᴇᴅɪᴄᴀʟ ǫᴜᴇʀʏ ᴛᴏ ᴀsᴋ.**")
+    YourQuery = message.text.replace(f"@{client.me.username}", "").strip()  # YourQuery डिफाइन किया
+    if not YourQuery:
+        await message.reply_text("**ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ǫᴜᴇʀʏ ᴛᴏ ᴀsᴋ.**")
         return
 
     await client.send_chat_action(chat_id=message.chat.id, action=ChatAction.TYPING)
 
     api_url = f"https://chatwithai.codesearchdev.workers.dev/?chat={YourQuery}"
+
     try:
         response = requests.get(api_url)
         if response.status_code == 200:
