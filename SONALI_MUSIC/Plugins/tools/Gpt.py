@@ -3,7 +3,7 @@ from pyrogram import Client, filters
 from pyrogram.enums import ChatAction
 from SONALI_MUSIC import app  # बॉट का एप्लिकेशन इंपोर्ट करें
 
-@app.on_message(filters.command("ai"))
+@app.on_message(filters.command("ask"))
 async def fetch_med_info(client, message):
     YourQuery = " ".join(message.command[1:]) if len(message.command) > 1 else None  # YourQuery डिफाइन किया
     if not YourQuery:
