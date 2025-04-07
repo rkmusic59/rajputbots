@@ -5,7 +5,7 @@ import html
 from pyrogram import filters
 from pyrogram.enums import PollType
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from SONALI import app  # Replace with actual import
+from SONALI_MUSIC import app  # Replace with actual import
 
 quiz_loops = {}
 active_polls = {}
