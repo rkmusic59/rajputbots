@@ -6,21 +6,21 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 from config import BANNED_USERS, SERVER_PLAYLIST_LIMIT
-from YTMUSIC import Carbon, YouTube, app
-from YTMUSIC.utils.database import (
+from SONALI_MUSIC import Carbon, YouTube, app
+from SONALI_MUSIC.utils.database import (
     delete_playlist,
     get_playlist,
     get_playlist_names,
     save_playlist,
 )
-from YTMUSIC.utils.decorators.language import language, languageCB
-from YTMUSIC.utils.inline.playlist import (
+from SONALI_MUSIC.utils.decorators.language import language, languageCB
+from SONALI_MUSIC.utils.inline.playlist import (
     botplaylist_markup,
     get_playlist_markup,
     warning_markup,
 )
-from YTMUSIC.utils.pastebin import YTBin as Yukkibin
-from YTMUSIC.utils.stream.stream import stream
+from SONALI_MUSIC.utils.pastebin import YTBin as Yukkibin
+from SONALI_MUSIC.utils.stream.stream import stream
 
 # Command
 PLAYLIST_COMMAND = ["playlist"]
