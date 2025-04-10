@@ -123,6 +123,15 @@ async def get_assistant(chat_id: int) -> str:
             userbot = await set_assistant(chat_id)
             return userbot
 
+async def get_playlist(chat_id: int, name: str) -> Union[bool, dict]:
+    name = name
+    _notes = await _get_playlists(chat_id)
+    if name in _notes:
+        return _notes[name]
+    else:
+        return False
+
+
 
 async def set_calls_assistant(chat_id):
     from SONALI_MUSIC.core.userbot import assistants
