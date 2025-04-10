@@ -123,6 +123,12 @@ async def get_assistant(chat_id: int) -> str:
             userbot = await set_assistant(chat_id)
             return userbot
 
+async def get_playlist_names(chat_id: int) -> List[str]:
+    _notes = []
+    for note in await _get_playlists(chat_id):
+        _notes.append(note)
+    return _notes
+    
 async def get_playlist(chat_id: int, name: str) -> Union[bool, dict]:
     name = name
     _notes = await _get_playlists(chat_id)
