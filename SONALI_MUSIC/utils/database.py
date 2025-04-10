@@ -55,7 +55,19 @@ async def get_client(assistant: int):
         return userbot.four
     elif int(assistant) == 5:
         return userbot.five
-
+        
+async def delete_playlist(chat_id: int, name: str) -> bool:
+    notesd = await _get_playlists(chat_id)
+    name = name
+    if name in notesd:
+        del notesd[name]
+        await playlistdb.update_one(
+            {"chat_id": chat_id},
+            {"$set": {"notes": notesd}},
+            upsert=True,
+        )
+        return True
+    return False
 
 async def set_assistant_new(chat_id, number):
     number = int(number)
