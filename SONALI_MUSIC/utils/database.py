@@ -77,7 +77,12 @@ async def set_assistant_new(chat_id, number):
         upsert=True,
     )
 
-
+async def _get_playlists(chat_id: int) -> Dict[str, int]:
+    _notes = await playlistdb.find_one({"chat_id": chat_id})
+    if not _notes:
+        return {}
+    return _notes["notes"]
+    
 async def set_assistant(chat_id):
     from SONALI_MUSIC.core.userbot import assistants
 
